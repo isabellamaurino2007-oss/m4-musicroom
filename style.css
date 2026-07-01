@@ -1,0 +1,245 @@
+/* --- ESTILOS GLOBALES --- */
+* { box-sizing: border-box; }
+body { 
+    margin: 0; 
+    background-color: #5a1e28; 
+    color: white; 
+    font-family: sans-serif; 
+    padding-bottom: 50px; 
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header { position: relative; text-align: center; }
+.header-banner { width: 100%; height: 250px; object-fit: cover; display: block; }
+.header-overlay { position: absolute; top: 40px; width: 100%; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+header input { width: 400px; padding: 12px; border-radius: 20px; border: none; margin-top: 10px; }
+
+nav { background-color: #ffcccc; padding: 20px; text-align: center; }
+nav a { color: #5a1e28; margin: 0 40px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+nav a.active { color: #3a131a; font-weight: 900; border-bottom: 2px solid #3a131a; }
+
+/* --- SECCIONES (RANKINGS) --- */
+section { 
+    background-color: #3d141b; 
+    padding: 30px 50px; 
+    margin: 20px 50px; 
+    border-radius: 10px; 
+}
+h2 { font-size: 1.2rem; margin-bottom: 20px; }
+
+/* Contenedor flexible para tarjetas */
+.flex-container { display: flex; flex-wrap: wrap; gap: 30px; }
+
+/* Tarjeta del disco */
+.card { width: 180px; }
+.img-container { 
+    width: 180px; height: 180px; background-color: #fbdada; 
+    padding: 6px; border-radius: 4px; overflow: hidden; 
+}
+.img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.name { font-size: 0.8rem; font-weight: bold; margin: 10px 0 0 0; }
+.artist { font-size: 0.75rem; color: #ffcccc; margin: 2px 0; }
+
+/* --- SECCIÓN NUEVOS RANKINGS (CON FONDO IMAGEN) --- */
+.background-header {
+    background-image: url('header.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 60px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Filtro oscuro para legibilidad */
+.background-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(90, 30, 40, 0.85); 
+}
+
+/* Asegurar que el contenido flote sobre el filtro */
+.background-header > * { position: relative; z-index: 1; }
+
+.stars-banner { font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; color: #ffcccc; }
+.big-input { width: 60%; padding: 15px; border-radius: 20px; border: none; display: block; margin: 20px auto; }
+.big-stars { font-size: 3rem; cursor: pointer; color: #ffcccc; }
+/* Tarjetas de acción Crear */
+.card-crear {
+    background-color: #ffcccc;
+    color: #5a1e28;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.plus-icon {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+/* Contenedor de las 3 tarjetas de acción */
+.crear-container {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas en la pantalla */
+    gap: 40px;               /* Espacio entre tarjetas */
+    padding: 20px;
+}
+
+.card-crear {
+    background-color: #ffcccc;
+    color: #5a1e28;
+    width: 280px;            /* Tamaño fijo para que se vean bien */
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-crear:hover { transform: scale(1.05); }
+
+.plus-icon { font-size: 4rem; margin-bottom: 10px; }
+/* Collage de 4 discos */
+.collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 150px;
+    height: 150px;
+}
+.collage img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4; /* Opacidad del 40% que pediste */
+}
+
+/* Tarjeta de suma */
+.card-add {
+    width: 150px;
+    height: 150px;
+    background: #5a1e28;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: 10px;
+}
+
+/* Biblioteca en cuadrícula */
+.grid-biblioteca {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+.grid-biblioteca button {
+    background: #ffcccc;
+    border: none;
+    padding: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Caja principal de perfil */
+.profile-card {
+    background-color: #fbdada; /* Color rosado de tu captura */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-stats {
+    display: flex;
+    gap: 40px;
+    text-align: center;
+}
+
+/* Caja inferior de búsqueda */
+.follow-section {
+    background-color: #fbdada;
+    padding: 20px;
+    text-align: center;
+}
+
+.follow-section input {
+    width: 60%;
+    padding: 10px;
+    border: none;
+    background: #dcdcdc;
+    text-align: center;
+}
+.profile-card {
+    background-color: #fbdada;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info { display: flex; align-items: center; gap: 20px; }
+.user-stats { display: flex; gap: 40px; text-align: center; }
+
+.follow-section {
+    background-color: #fbdada;
+    padding: 20px;
+    text-align: center;
+}
+/* Estilos para PERFIL */
+.profile-card {
+    background-color: #fbdada;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-stats {
+    display: flex;
+    gap: 40px;
+    text-align: center;
+}
+
+.follow-section {
+    background-color: #fbdada;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.follow-section input {
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
